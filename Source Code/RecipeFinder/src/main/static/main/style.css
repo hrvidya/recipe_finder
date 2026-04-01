@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Lora:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: 'Lora', serif; /* Updated body font */
+    scroll-behavior: smooth;
+    background-color: #F7F1E1; /* Soft Beige Background */
+    color: black; /* Set text color to black for all text */
+}
+
+body {
+    background: linear-gradient(135deg, #D8E0F3, #F4F4F4); /* Light Misty Blue and Soft Gray Gradient */
+}
+
+.main_content {
+    width: 100%;
+    margin: auto;
+    padding-top: 100px;
+}
+
+::selection {
+    background-color: #FF6F61; /* Soft Coral for selection */
+    color: #ffffff;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color:#ff5a5f;
+}
+
+.btn {
+    border: none;
+    width: 15em;
+    height: 5em;
+    border-radius: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: #FF6F61; /* Soft Coral Button */
+    cursor: pointer;
+    transition: all 450ms ease-in-out;
+}
+
+.sparkle {
+    fill: linear-gradient(0deg, #FF6F61, #F6D1C1); /* Soft Gradient Sparkle */
+    transition: all 800ms ease;
+}
+
+.text {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: medium;
+}
+
+.btn:hover {
+    background: linear-gradient(0deg, #FF6F61, #F6D1C1); /* Soft Coral Hover */
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+        inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+        0px 0px 0px 4px rgba(255, 255, 255, 0.2),
+        0px 0px 180px 0px #FF6F61;
+    transform: translateY(-2px);
+}
+
+.btn:hover .text {
+    color: rgb(234, 149, 149);
+}
+
+.btn:hover .sparkle {
+    fill: rgb(228, 154, 154);
+    transform: scale(1.2);
+}
+
+.top-section {
+    padding: 0.5em;
+    width: calc(100% - 1em);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(32, 10, 94, 0.06) 0px 1px 2px 0px;
+    position: fixed;
+    z-index: 10;
+    backdrop-filter: blur(100px);
+}
+
+.top-section h1 {
+    font-family: 'Playfair Display', serif; /* Updated heading font */
+    font-size: 35px;
+    font-weight: 600;
+    color: black; /* Set heading text color to black */
+}
+
+#title_image {
+    max-height: 100%;
+    max-width: 60%;
+    object-fit: contain;
+}
+
+#id_image, #cap_image {
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.image-upload-area {
+    margin: 0 auto;
+}
+
+.uploaded-image-display {
+    width: 50%;
+    height: 400px;
+    margin: 0 auto;
+    margin-block: 20px;
+    position: relative;
+    border-radius: 1em;
+}
+
+.uploaded-image-display img {
+    border-radius: 1em;
+}
+
+#up-image {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.image_form {
+    display: block;
+    text-align: center;
+}
+
+.upload_button {
+    padding: 17px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+    background-color: #FF6F61; /* Soft Coral for button */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.5s ease;
+    color: white;
+}
+
+.upload_button:hover {
+    letter-spacing: 3px;
+    background-color: #F6D1C1; /* Pastel Pink on hover */
+    box-shadow: rgb(13, 9, 21) 0px 7px 29px 0px;
+}
+
+.upload_button:active {
+    letter-spacing: 3px;
+    background-color: #F6D1C1;
+    box-shadow: rgb(233, 232, 235) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+}
+
+.process_button {
+    text-decoration: none;
+    background-color: #0a0a0a; /* Purple Button */
+    color: rgb(21, 19, 19);
+    display: inline-block;
+    padding: 10px 26px 10px 26px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 0 0 hsl(0deg 0% 100% / 40%);
+    cursor: pointer;
+}
+
+.recipe-card {
+    width: 70%;
+    padding: 2em;
+    border: 1px solid rgba(83, 82, 82, 0.205);
+    border-radius: 1em;
+    margin: auto;
+    margin-top: 2em;
+    box-shadow: rgba(71, 12, 48, 0.16) 0px 1px 4px;
+    position: relative;
+    z-index: 6;
+    background-color: #FFFFFF; /* Light Background for Recipe Cards */
+    margin-bottom: 20px;
+}
+
+.container-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 1em;
+}
+
+.blur-top, .blur-bottom {
+    background: linear-gradient(0deg, #D8E0F3, #F4F4F4);
+    filter: blur(80px);
+    z-index: -1;
+}
+
+.first_section {
+    margin-inline: 10px;
+    height: 100%;
+}
+
+.recipe_name {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    text-align: center;
+    color: black; /* Set recipe name text color to black */
+}
+
+.second_section, .third_section {
+    margin-inline: 10px;
+    width: 35%;
+    height: 100%;
+}
+
+.second_section p, .third_section p {
+    margin-top: 1.5em;
+    font-size: 14px;
+    font-weight: 300;
+    color: black; /* Set text color for paragraphs to black */
+}
+
+.ing_dir_display_area {
+    overflow-y: auto;
+    width: 100%;
+    height: 80%;
+}
+
+.bottom-section {
+    text-align: center;
+    background-color:black; /* Charcoal Gray Footer */
+    color: white;
+    margin-top: 20px;
+    padding: 5px;
+    position: relative;
+    border-top: 1px solid rgba(83, 82, 82, 0.205);
+}
+
+.s_media_icon {
+    max-height: 25px;
+    max-width: 25px;
+    margin: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .upload_button {
+        padding: 1em;
+    }
+}
+
+
+.first_section h2, .second_section h2, .third_section h2 {
+    color: black; /* Set h2 headings inside sections to black */
+}
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif; /* Elegant serif with vintage flair */
+    font-weight: 700; /* Bold for prominence */
+    color: black; /* Deep gray color */
+    letter-spacing: 1px;
+    text-align: center;
+    line-height: 1.4;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth text color and scale transition */
+}
+
+h1:hover, h2:hover, h3:hover {
+    color: #ff5a5f; /* Change color to coral on hover */
+    transform: scale(1.05); /* Slightly enlarge the text on hover */
+}
+
+h1::after{
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%; /* Full width underline for h1 */
+    height: 3px;
+    background: #ff5a5f; /* Soft coral underline */
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+h1:hover::after  {
+    transform: scaleX(1); /* Full underline effect on hover */
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
